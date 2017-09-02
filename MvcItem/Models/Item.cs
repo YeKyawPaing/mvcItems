@@ -10,8 +10,15 @@ namespace MvcItem.Models
     public class Item
     {
         public int ItemID { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
         public string ItemName { get; set; }
+
+        [StringLength(60, MinimumLength = 3)]
         public string ItemCategory { get; set; }
+
+        [Range(1, 100)]
+        [DataType(DataType.Currency)]
         public decimal ItemPrice { get; set; }
         public int ItemCount { get; set; }
     }

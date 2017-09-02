@@ -161,6 +161,14 @@
     <Compile Include="Migrations\201709021528082_Initial.Designer.cs">
       <DependentUpon>201709021528082_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709021753027_Initial1.cs" />
+    <Compile Include="Migrations\201709021753027_Initial1.Designer.cs">
+      <DependentUpon>201709021753027_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709021800548_DataAnnotations.cs" />
+    <Compile Include="Migrations\201709021800548_DataAnnotations.Designer.cs">
+      <DependentUpon>201709021800548_DataAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Item.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -230,6 +238,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709021528082_Initial.resx">
       <DependentUpon>201709021528082_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709021753027_Initial1.resx">
+      <DependentUpon>201709021753027_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709021800548_DataAnnotations.resx">
+      <DependentUpon>201709021800548_DataAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
