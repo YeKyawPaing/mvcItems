@@ -15,17 +15,31 @@ namespace MvcItem.Controllers
         private ItemDBContext db = new ItemDBContext();
 
         // GET: Items
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string itemCate, string searchString)
         {
-            var movies = from m in db.Items
+            var CategoryLst = new List<string>();
+
+            var CategoryQry = from d in db.Items
+                           orderby d.ItemCategory
+                           select d.ItemCategory;
+
+            CategoryLst.AddRange(CategoryQry.Distinct());
+            ViewBag.itemCate = new SelectList(CategoryLst);
+
+            var items = from m in db.Items
                          select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
-                movies = movies.Where(s => s.ItemName.Contains(searchString));
+                items = items.Where(s => s.ItemName.Contains(searchString));
             }
 
-            return View(movies);
+            if (!string.IsNullOrEmpty(itemCate))
+            {
+                items = items.Where(x => x.ItemCategory == itemCate);
+            }
+
+            return View(items);
         }
 
         // GET: Items/Details/5
